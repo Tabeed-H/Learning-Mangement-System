@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Big+Shoulders+Display:wght@300&family=Nunito&family=Overpass:wght@500&family=Rock+Salt&family=Rubik+80s+Fade&family=Six+Caps&family=Teko:wght@300&display=swap");
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-top: 1em;
+}
+.logo-container {
+  width: 30%;
+  margin-left: 3em;
+}
+.logo {
+  color: #9eb0ea;
+  font-family: Overpass;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 3.6px;
+}
+.options-container {
+  display: flex;
+  flex-direction: row;
+}
+.options {
+  margin-right: 1em;
+  color: #444b59;
+  text-align: right;
+  font-family: Nunito;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.special {
+  margin-right: 3em;
+}
