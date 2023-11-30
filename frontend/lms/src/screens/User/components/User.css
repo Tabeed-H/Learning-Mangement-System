@@ -1,0 +1,78 @@
+.u-container {
+  margin-left: 5em;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+}
+.u-tag {
+  display: flex;
+  flex-direction: column;
+}
+.u-tag-main {
+  color: #000;
+  font-family: Overpass;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+.u-tag-sub {
+  color: #767676;
+  font-family: Overpass;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.u-reg-cour {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+.card-container {
+  border-radius: 15px;
+  border: solid 1px #000;
+  width: 20vw;
+  margin-right: 1em;
+  padding: 1em;
+}
+.c-name {
+  color: #000;
+  font-family: Overpass;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.c-inst {
+  color: #000;
+  font-family: Overpass;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.c-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  color: #fff;
+  background-color: #515151;
+  font-family: Overpass;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 40%;
+  padding: 0.5em;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
