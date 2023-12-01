@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "../User/components/Card";
+import { useNavigate } from "react-router-dom";
 import "./List.css";
 
 const List = () => {
@@ -25,8 +26,10 @@ const List = () => {
       courseInstructor: "Dr. Ahsan",
     },
   ]);
+
+  const navigate = useNavigate();
   const handleCardEvent = (e) => {
-    console.log(e);
+    navigate(`/course/info/${e}`);
   };
   return (
     <div className="c-container">

@@ -1,0 +1,93 @@
+.course-container {
+  margin-left: 5em;
+  margin-top: 2em;
+  width: 90%;
+}
+.course-tag {
+  color: #000;
+  font-family: Overpass;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.course-name {
+  margin-top: 1em;
+  color: #000;
+  font-family: Overpass;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.course-inst {
+  color: #000;
+  font-family: Overpass;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+.course-details {
+  margin-top: 2em;
+}
+.course-d-tag {
+  color: #000;
+  font-family: Overpass;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.course-d {
+  margin-top: 1em;
+  color: #000;
+  font-family: Overpass;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.en-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  color: #fff;
+  background-color: #515151;
+  font-family: Overpass;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 20%;
+  padding: 1em;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  cursor: pointer;
+}
+.course-mat {
+  margin-top: 2em;
+}
+
+.course-mat-tag {
+  color: #000;
+  font-family: Overpass;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.course-mat-link {
+  margin-top: 1em;
+  color: #000;
+  font-family: Overpass;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+}

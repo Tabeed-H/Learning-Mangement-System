@@ -1,11 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "./Card.jsx";
+
 import "./User.css";
 
 const User = (props) => {
   const { regCourses } = props;
+  const navigate = useNavigate();
   const handleCardEvent = (e) => {
-    console.log(e);
+    navigate(`/course/details/${e}`);
   };
   return (
     <div className="u-container">

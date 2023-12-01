@@ -4,7 +4,7 @@ const Card = (props) => {
   const { courseData, onAction } = props;
 
   const handleDetailsButton = () => {
-    onAction(courseData);
+    onAction(courseData._id);
   };
   return (
     <div className="card-container">

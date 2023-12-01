@@ -4,7 +4,8 @@ import Login from "./screens/Login";
 import Signup from "./screens/Signup";
 import Dashboard from "./screens/User/Dashboard";
 import IDashboard from "./screens/Instructor/Dashboard";
-
+import Info from "./screens/Course/Info";
+import Details from "./screens/Course/Details";
 const App = () => {
   return (
     <BrowserRouter>
@@ -13,6 +14,8 @@ const App = () => {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/student/dashboard" element={<Dashboard />}></Route>
         <Route path="/instructor/dashboard" element={<IDashboard />}></Route>
+        <Route path="/course/info/:id" element={<Info />}></Route>
+        <Route path="/course/details/:id" element={<Details />}></Route>
       </Routes>
     </BrowserRouter>
   );
