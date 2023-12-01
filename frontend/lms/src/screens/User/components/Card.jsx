@@ -1,10 +1,10 @@
 import React from "react";
 
 const Card = (props) => {
-  const { courseData } = props;
+  const { courseData, onAction } = props;
 
   const handleDetailsButton = () => {
-    console.log(`course id: ${courseData._id}`);
+    onAction(courseData);
   };
   return (
     <div className="card-container">

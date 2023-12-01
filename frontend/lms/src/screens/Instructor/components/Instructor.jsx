@@ -1,21 +1,20 @@
 import React from "react";
-import Card from "./Card.jsx";
-import "./User.css";
+import Card from "../../User/components/Card";
 
-const User = (props) => {
-  const { regCourses } = props;
+const Instructor = (props) => {
+  const { courseData } = props;
   const handleCardEvent = (e) => {
     console.log(e);
   };
   return (
     <div className="u-container">
       <div className="u-tag">
-        <div className="u-tag-main">Hello Learner!</div>
-        <div className="u-tag-sub">Continue Your Learning.</div>
+        <div className="u-tag-main">Hello Teacher!</div>
+        <div className="u-tag-sub">Manage your added courses.</div>
       </div>
       <div className="seperator"></div>
       <div className="u-reg-cour">
-        {regCourses.map((data, index) => (
+        {courseData.map((data, index) => (
           <Card key={index} courseData={data} onAction={handleCardEvent} />
         ))}
       </div>
@@ -23,4 +22,4 @@ const User = (props) => {
   );
 };
 
-export default User;
+export default Instructor;

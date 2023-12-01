@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"; // importing re
 import Login from "./screens/Login";
 import Signup from "./screens/Signup";
 import Dashboard from "./screens/User/Dashboard";
+import IDashboard from "./screens/Instructor/Dashboard";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/student/dashboard" element={<Dashboard />}></Route>
+        <Route path="/instructor/dashboard" element={<IDashboard />}></Route>
       </Routes>
     </BrowserRouter>
   );

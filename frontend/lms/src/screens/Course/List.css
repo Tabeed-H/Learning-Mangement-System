@@ -1,0 +1,32 @@
+.c-container {
+  margin-left: 5em;
+  margin-top: 2em;
+}
+.c-cour {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+.c-header {
+  display: flex;
+  flex-direction: column;
+}
+.c-header-tag {
+  color: #000;
+  font-family: Overpass;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+.c-header-sub {
+  color: #767676;
+  font-family: Overpass;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
