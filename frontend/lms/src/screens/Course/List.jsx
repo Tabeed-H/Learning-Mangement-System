@@ -1,36 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../User/components/Card";
 import { useNavigate } from "react-router-dom";
 import "./List.css";
 
 const List = () => {
-  const [courses, setCourses] = useState([
-    {
-      _id: 1,
-      courseName: "Digital Image Processing",
-      courseInstructor: "Dr. Sahil",
-    },
-    {
-      _id: 2,
-      courseName: "Compiler Design",
-      courseInstructor: "Dr. Rouf",
-    },
-    {
-      _id: 3,
-      courseName: "Network Security",
-      courseInstructor: "Dr. Adil",
-    },
-    {
-      _id: 4,
-      courseName: "Computer Graphics",
-      courseInstructor: "Dr. Ahsan",
-    },
-  ]);
+  const [courses, setCourses] = useState([]);
+
+  const getCourses = async () => {
+    try {
+      const accessToken = localStorage.getItem("accessToken");
+      if (!accessToken) {
+        // Handle case where the user is not authenticated
+        console.error("User is not authenticated");
+        return;
+      }
+      console.log("HIT");
+      const response = await fetch("http://127.0.0.1:8000/api/v1/course/all", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        setCourses(result);
+        console.log(result);
+      } else {
+        console.error("Failed to fetch Course:", response.statusText);
+        alert(`Something Went Wrong!`);
+      }
+    } catch (e) {
+      console.error("Failed to fetch Course:", response.statusText);
+      alert(`Something Went Wrong!`, e.message);
+    }
+  };
 
   const navigate = useNavigate();
   const handleCardEvent = (e) => {
     navigate(`/course/info/${e}`);
   };
+
+  useEffect(() => {
+    getCourses();
+  }, []);
   return (
     <div className="c-container">
       <div className="c-header">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./components/Header";
 
 const Signup = () => {
@@ -7,13 +8,79 @@ const Signup = () => {
   const [userPassword, setUserPassword] = useState("");
   const [userType, setUserType] = useState("Student");
 
-  const handleSignup = () => {
-    console.log({
-      username,
-      userEmail,
-      userPassword,
-      userType,
-    });
+  const navigate = useNavigate();
+  const handleSignup = async () => {
+    if (userType === "Student") {
+      handleStudentSignup();
+    } else {
+      handleTeacherSignup();
+    }
+  };
+
+  const handleStudentSignup = async () => {
+    const data = {
+      student_name: username,
+      email: userEmail,
+      password: userPassword,
+    };
+
+    try {
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/v1/student/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Student created:", result);
+        alert("Welcome Student!");
+        navigate("/");
+      } else {
+        console.error("Failed to create student:", response.statusText);
+        alert(`Something Went Wrong!`);
+      }
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  const handleTeacherSignup = async () => {
+    const data = {
+      teacher_name: username,
+      email: userEmail,
+      password: userPassword,
+    };
+
+    try {
+      const response = await fetch(
+        "http://127.0.0.1:8000/api/v1/teacher/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Student created:", result);
+        alert("Welcome teacher!");
+        navigate("/");
+      } else {
+        console.error("Failed to create student:", response.statusText);
+        alert(`Something Went Wrong!`);
+      }
+    } catch (e) {
+      console.log(e.message);
+    }
   };
 
   return (

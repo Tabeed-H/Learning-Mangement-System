@@ -3,7 +3,7 @@ import "./AddCourse.css";
 
 const AddCourseForm = ({ onAddCourse }) => {
   const [courseName, setCourseName] = useState("");
-  const [courseInstructor, setCourseInstructor] = useState("");
+  // const [courseInstructor, setCourseInstructor] = useState("");
   const [about, setAbout] = useState("");
   const [material, setMaterial] = useState("");
 
@@ -14,7 +14,6 @@ const AddCourseForm = ({ onAddCourse }) => {
     // Create a course object with the entered data
     const newCourse = {
       courseName,
-      courseInstructor,
       about,
       material,
     };
@@ -24,7 +23,7 @@ const AddCourseForm = ({ onAddCourse }) => {
 
     // Clear the form fields after submission
     setCourseName("");
-    setCourseInstructor("");
+    // setCourseInstructor("");
     setAbout("");
     setMaterial("");
   };
@@ -45,7 +44,7 @@ const AddCourseForm = ({ onAddCourse }) => {
               placeholder="Enter Course Name"
             />
           </div>
-          <div className="f-entry">
+          {/* <div className="f-entry">
             <div className="f-label">Course Instructor:</div>
             <input
               className="f-text"
@@ -54,7 +53,7 @@ const AddCourseForm = ({ onAddCourse }) => {
               onChange={(e) => setCourseInstructor(e.target.value)}
               placeholder="Enter Instructor Name"
             />
-          </div>
+          </div> */}
 
           <div className="f-entry">
             <div className="f-label">About: </div>
