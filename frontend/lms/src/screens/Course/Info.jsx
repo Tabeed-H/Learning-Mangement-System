@@ -1,21 +1,72 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Header from "./Components/Header";
 import Course from "./Components/Course";
 
 import "./Info.css";
 
 const Info = () => {
-  const [course, setCourse] = useState({
-    _id: 1,
-    courseName: "Digital Image Processing",
-    courseInstructor: "Dr. Sahil",
-    courseDetails:
-      "Digital image processing is the use of algorithms and mathematical models to process and analyze digital images. The goal of digital image processing is to enhance the quality of images, extract meaningful information from images, and automate image-based tasks.",
-  });
+  const [course, setCourse] = useState({});
+  const [teacher, setTeacher] = useState("");
+  const { id } = useParams();
+  const getDetails = async () => {
+    try {
+      const accessToken = localStorage.getItem("accessToken");
+      if (!accessToken) {
+        // Handle case where the user is not authenticated
+        console.error("User is not authenticated");
+        return;
+      }
+
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/v1/course/details/?id=${id}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        setCourse({});
+        setCourse(result);
+        getTeacher(result.teacher_id);
+      } else {
+        console.error("Failed to fetch data:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  };
+
+  const getTeacher = async (id) => {
+    try {
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/v1/teacher/single/?id=${id}`,
+        {
+          method: "GET",
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        setTeacher(result.teacher_name);
+      } else {
+        console.error("Failed to fetch data:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  };
+  useEffect(() => {
+    getDetails();
+  }, []);
   return (
     <>
       <Header />
-      <Course data={course} />
+      <Course data={course} name={teacher} _id={id} />
     </>
   );
 };

@@ -36,3 +36,7 @@ async def login_user(form_data: OAuth2PasswordRequestForm = Depends(), db: Sessi
 @teacher_router.get('/', summary="Get Current User Info", response_model=TeacherResponse)
 async def get_user(teacher: Teacher = Depends(auth_teacher.get_current_user)):
     return teacher
+
+@teacher_router.get('/single/', summary="Get teacher by id", response_model=TeacherResponse)
+async def get_Teacher(id: str, db : Session = Depends(get_db)):
+    return await Teacher.get_user_by_id(db, id)

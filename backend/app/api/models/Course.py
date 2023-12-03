@@ -1,6 +1,5 @@
 
 from sqlalchemy import Column, String, Text, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from ...database import Base
 from uuid import uuid4
@@ -15,3 +14,6 @@ class Course(Base):
     # Relationship with Teacher
     teacher_id = Column(String, ForeignKey('teachers.id'))
     owner = relationship("Teacher", back_populates="courses")
+
+    # Relationship with Student
+    # students = relationship("Student", secondary="enrollments", back_populates="courses")

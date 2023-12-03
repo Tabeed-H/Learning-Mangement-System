@@ -5,7 +5,7 @@ import Card from "./Card.jsx";
 import "./User.css";
 
 const User = (props) => {
-  const { regCourses } = props;
+  const { Mydata } = props;
   const navigate = useNavigate();
   const handleCardEvent = (e) => {
     navigate(`/course/details/${e}`);
@@ -18,7 +18,7 @@ const User = (props) => {
       </div>
       <div className="seperator"></div>
       <div className="u-reg-cour">
-        {regCourses.map((data, index) => (
+        {Mydata.map((data, index) => (
           <Card key={index} courseData={data} onAction={handleCardEvent} />
         ))}
       </div>
